@@ -18,15 +18,13 @@ get_header();
 		<main id="main" class="site-main">
 
 		<?php
+
+
 		while ( have_posts() ) :
 			the_post();
+		get_template_part( 'template-parts/content', 'page' );
+           // echo get_the_title();
 
-//			get_template_part( 'template-parts/content', 'page' );
-            echo get_the_title();
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
         endwhile; // End of the loop.
         
@@ -47,13 +45,28 @@ echo '<h2>' .category_description(get_category_by_slug('nouvelles')) . '</h2>';
             $query1->the_post();
             echo "<h2>" . get_the_title() . "</h2>";
             echo "<p>" . get_the_excerpt() . "</p>";
+            the_post_thumbnail('thumbnail');
         }
 
+
+        
+echo '<h2>' .category_description(get_category_by_slug('Événement')) . '</h2>';
 
 $args2 = array(
     "category_name" => "Événement",
     "posts_per_page" => 10
 );
+
+    $query2 = new WP_Query($args2);
+
+    while ($query2->have_posts()){
+        $query2->the_post();
+        echo "<h2>" . get_the_title() . "</h2>";
+        echo "<p>" . get_the_excerpt() . "</p>";
+        the_post_thumbnail('thumbnail');
+    }
+
+
 
 
 		?>
