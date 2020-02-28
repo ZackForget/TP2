@@ -1,7 +1,7 @@
 /*
  Theme Name:   Underscores Child
- Theme URI:    http://example.com/twenty-fifteen-child/
- Description:  Twenty Fifteen Child Theme
+ Theme URI:    http://example.com/Underscores/
+ Description:  Underscores Child Theme
  Author:       John Doe
  Author URI:   http://example.com
  Template:     underscores
@@ -12,3 +12,10 @@
  Text Domain:  underscores-child
 */
 
+.site-branding{
+    display: none;
+}
+
+#menu-item-33{
+    display: none;
+}
