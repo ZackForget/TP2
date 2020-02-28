@@ -23,4 +23,13 @@
 
 h2{
     text-decoration-line: underline;
+
+}
+
+
+p{
+    max-width: 75%;
+    text-align: center;
+    letter-spacing: 3px;
+    word-spacing: 6px;
 }
