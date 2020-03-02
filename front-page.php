@@ -40,10 +40,15 @@ get_header();
 
         while ($query0->have_posts()){
             $query0->the_post();
-           
-            echo "<h2>" . get_the_title();
-            echo get_the_date() . "</h2>";
+            echo "<div id=confDiv>";
             the_post_thumbnail('thumbnail');
+            
+            echo "<section id=confDesc><h2>" . get_the_title();
+            echo "  -  ";
+            echo get_the_date() . "</h2>";
+            
+            echo "<p>" . get_the_excerpt() . "</p></section></div>";
+            
        
        // echo "<h2>" . get_the_title() . "</h2>";
         //echo "<p>" . the_post_thumbnail('thumbnail') . "</p>";
@@ -65,8 +70,9 @@ get_header();
 
         while ($query1->have_posts()){
             $query1->the_post();
-            echo "<h2>" . get_the_title() . "</h2>";
+            echo "<div id='nouvDiv'><section id='nouvTitre'> <h2>" . get_the_title() . "</h2></section><section='nouvImg'>";
             the_post_thumbnail('thumbnail');
+            echo "</section> </div>";
         }
 
 

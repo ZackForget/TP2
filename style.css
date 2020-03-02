@@ -28,8 +28,25 @@ h2{
 
 
 p{
-    max-width: 75%;
+    max-width: 90%;
     text-align: center;
-    letter-spacing: 3px;
-    word-spacing: 6px;
+    letter-spacing: 1px;
 }
+
+
+#confDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+#confDiv img{
+    padding-left: 10px;
+}
+
+#confDesc{
+    padding-left: 10px;
+}
+
+
+
