@@ -28,43 +28,82 @@ get_header();
 
         endwhile; // End of the loop.
         
-echo '<h2>' .category_description(get_category_by_slug('nouvelles')) . '</h2>';
 
+
+        echo '<h2>' .category_description(get_category_by_slug('conferences')) . '</h2>';
+        $args0 = array(
+            "category_name" => " Conférences",
+            "posts_per_page" => 5
+        );
+
+        $query0 = new WP_Query($args0);
+
+        while ($query0->have_posts()){
+            $query0->the_post();
+           
+            echo "<h2>" . get_the_title();
+            echo get_the_date() . "</h2>";
+            the_post_thumbnail('thumbnail');
+       
+       // echo "<h2>" . get_the_title() . "</h2>";
+        //echo "<p>" . the_post_thumbnail('thumbnail') . "</p>";
+        }
+
+
+//Affichage des nouvelles
+    echo '<h2>' .category_description(get_category_by_slug('nouvelles')) . '</h2>';
 
         $args = array(
             "category_name" => "nouvelles",
-            "posts_per_page" => 3
-//            "orderby" => "date", 
-  //          "order" => "ASC"
+            "posts_per_page" => 4,
+            "orderby" => "date", 
+            "order" => "ASC"
 
         );
         $query1 = new WP_Query($args);
-
+    
 
         while ($query1->have_posts()){
             $query1->the_post();
             echo "<h2>" . get_the_title() . "</h2>";
-            echo "<p>" . get_the_excerpt() . "</p>";
             the_post_thumbnail('thumbnail');
         }
 
 
-        
-echo '<h2>' .category_description(get_category_by_slug('Événement')) . '</h2>';
+//Affichage des Événements
+   // echo '<h2>' .category_description(get_category_by_slug('Événement')) . '</h2>';
 
-$args2 = array(
-    "category_name" => "Événement",
-    "posts_per_page" => 10
-);
+//$args2 = array(
+//    "category_name" => "Événement",
+//    "posts_per_page" => 10
+//);
 
-    $query2 = new WP_Query($args2);
 
-    while ($query2->have_posts()){
-        $query2->the_post();
-        echo "<h2>" . get_the_title() . "</h2>";
-        echo "<p>" . get_the_excerpt() . "</p>";
-        the_post_thumbnail('thumbnail');
-    }
+
+//section class grille événement
+//<php
+//while (have post)
+//
+
+
+
+//(get_the_date) ('j')
+//(get_the_date) ('m')
+//(get_the_date) ('y')
+
+//$jour = getTheDate
+
+
+
+
+//    $query2 = new WP_Query($args2);
+
+ //   while ($query2->have_posts()){
+ //       $query2->the_post();
+ //       echo "<h2>" . get_the_title() . "</h2>";
+//       echo "<p>" . get_the_excerpt() . "</p>";
+ //       the_post_thumbnail('thumbnail');
+//    }
 
 
 
