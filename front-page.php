@@ -56,7 +56,9 @@ get_header();
 
 
 //Affichage des nouvelles
-    echo '<h2>' .category_description(get_category_by_slug('nouvelles')) . '</h2>';
+    echo "<h2>" .category_description(get_category_by_slug('nouvelles')) . "</h2>";
+
+    echo "<div id='nouvDivFull'>";
 
         $args = array(
             "category_name" => "nouvelles",
@@ -65,15 +67,24 @@ get_header();
             "order" => "ASC"
 
         );
+
+
+
         $query1 = new WP_Query($args);
     
-
         while ($query1->have_posts()){
             $query1->the_post();
-            echo "<div id='nouvDiv'><section id='nouvTitre'> <h2>" . get_the_title() . "</h2></section><section='nouvImg'>";
-            the_post_thumbnail('thumbnail');
+            
+                echo "<div id='nouvDiv'>
+                    <section id='nouvTitre'>
+                         <h2>" . get_the_title() . "</h2></section>";
+                    echo "<section='nouvImg'>";
+                     the_post_thumbnail('thumbnail');
             echo "</section> </div>";
+       
         }
+        echo "</div>";
+
 
 
 //Affichage des Événements
