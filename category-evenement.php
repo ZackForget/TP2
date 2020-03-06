@@ -5,7 +5,6 @@ get_header();
 ?>
 <div id="primary" class="content-area">
 <main id="main" class="site-main">
-/////////////////////////////////////////  Categorie evenement
 <?php
 
 
@@ -21,7 +20,7 @@ endwhile; // End of the loop.
 echo '<h2>' .category_description(get_category_by_slug('Événement')) . '</h2>';
 
 
-echo '<section >';
+echo '<div id="grilleevenement">';
 
    while ( have_posts()) :
    the_post();
@@ -31,13 +30,12 @@ echo '<section >';
 
     $gridArea = $jour . '/' . $mois . '/' . ($jour+1) . '/' . ($mois+1) ;
 
-echo '<div id="evenement"><p style="grid-area: '.$gridArea . '">' . 
-get_the_title() . $gridArea .get_the_date('j / m / Y')
-."</p></div>";
+echo '<p style="grid-area: '.$gridArea . '">' . 
+get_the_title() . ' - ' . $gridArea . ' - ' .get_the_date('j / m / Y')
+."</p>";
 
 endwhile;
-echo "</section>"
-
+echo '</div>';
  
 
 
