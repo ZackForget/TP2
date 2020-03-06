@@ -1,0 +1,13 @@
+.grilleEvenement{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(31, 1fr); 
+}
+
+.evenement{
+    border: 1px solid black;
+}
+
+p{
+    color: red;
+}

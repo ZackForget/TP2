@@ -29,14 +29,33 @@ get_header();
         endwhile; // End of the loop.
         
 
-
-        echo '<h2>' .category_description(get_category_by_slug('conferences')) . '</h2>';
-        $args0 = array(
+ $args0 = array(
             "category_name" => " Conférences",
             "posts_per_page" => 5
         );
 
         $query0 = new WP_Query($args0);
+
+
+
+        $args = array(
+            "category_name" => "nouvelles",
+            "posts_per_page" => 4,
+            "orderby" => "date", 
+            "order" => "ASC"
+
+        );
+
+
+
+        $query1 = new WP_Query($args);
+
+
+
+
+        //Affichage Conférences
+        echo '<h2>' .category_description(get_category_by_slug('conferences')) . '</h2>';
+       
 
         while ($query0->have_posts()){
             $query0->the_post();
@@ -60,17 +79,6 @@ get_header();
 
     echo "<div id='nouvDivFull'>";
 
-        $args = array(
-            "category_name" => "nouvelles",
-            "posts_per_page" => 4,
-            "orderby" => "date", 
-            "order" => "ASC"
-
-        );
-
-
-
-        $query1 = new WP_Query($args);
     
         while ($query1->have_posts()){
             $query1->the_post();
