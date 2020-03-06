@@ -87,41 +87,10 @@ get_header();
 
 
 
-//Affichage des Événements
-   // echo '<h2>' .category_description(get_category_by_slug('Événement')) . '</h2>';
-
-//$args2 = array(
-//    "category_name" => "Événement",
-//    "posts_per_page" => 10
-//);
 
 
 
-//section class grille événement
-//<php
-//while (have post)
-//
-
-
-
-//(get_the_date) ('j')
-//(get_the_date) ('m')
-//(get_the_date) ('y')
-
-//$jour = getTheDate
-
-
-
-
-//    $query2 = new WP_Query($args2);
-
- //   while ($query2->have_posts()){
- //       $query2->the_post();
- //       echo "<h2>" . get_the_title() . "</h2>";
-//       echo "<p>" . get_the_excerpt() . "</p>";
- //       the_post_thumbnail('thumbnail');
-//    }
-
+get_template_part('category-evenements');
 
 
 
