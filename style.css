@@ -21,7 +21,9 @@
 }
 
 
-
+.main{
+    background-color: black;
+}
 
 p{
     max-width: 75%;
@@ -29,3 +31,19 @@ p{
     letter-spacing: 3px;
     word-spacing: 6px;
 }
+
+
+#grilleAteliers{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(11, 1fr); 
+}
+
+#grilleAteliers div{
+    border: solid 1px black;
+
+}
+
+
+
+@import 'sass/style.scss';
