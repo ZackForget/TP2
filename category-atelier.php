@@ -7,7 +7,7 @@
 <main id="main" class="site-main">
 <?php
 
-get_header();
+
 while ( have_posts() ) :
     the_post();
 //get_template_part( 'template-parts/content', 'page' );
@@ -16,8 +16,8 @@ while ( have_posts() ) :
 
 endwhile; // End of the loop.
 
-
-
+get_header();
+get_template_part('header');
 
 $args = array(
     "category_name" => "atelier",
@@ -44,9 +44,9 @@ echo '<h2>' .category_description(get_category_by_slug('Atelier')) . '</h2>';
 
 
     echo "<div>";
-   echo "<p style='grid-area: ".$gridarea."' > <span style=color:grey>" . get_the_title() . " _____ </span></p>";
+   echo "<p style='grid-area: ".$gridarea."' > <span style=color:grey>" . get_the_title() . " </span></p>";
    echo "<p><span style=color:red>" . get_post_field('post_name') . "</span></p>";
-   echo  "<p><span style=color:blue> _____ " . get_the_author_meta('display_name', $post->post_author) . "</span></p>";
+   echo  "<p><span style=color:blue>" . get_the_author_meta('display_name', $post->post_author) . "</span></p>";
     echo "</div>";
 
 endwhile;
