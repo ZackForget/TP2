@@ -47,7 +47,3 @@ function creationHTML(postsData){
     }
     contenuNouvelle.innerHTML = monHtmlString; 
 }
-
-
-
-

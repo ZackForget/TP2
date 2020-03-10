@@ -14,12 +14,14 @@ while ( have_posts() ) :
     
 endwhile;
 
+get_template_part('header');
+
 echo '<h2>' .category_description(get_category_by_slug('Nouvelles')) . '</h2>';
 
 
 $args = array(
     "category_name" => "nouvelle",
-    "posts_per_page" => 8
+    "posts_per_page" => 6
 //            "orderby" => "date", 
 //          "order" => "ASC"
 
@@ -35,6 +37,7 @@ while ($query1->have_posts()){
     echo "<div id='textFlex'><h2>" . get_the_title() . "</h2>";
     echo "<p>" . get_the_excerpt() . "</p></div>";
     echo "</section>";
+    echo "<button type='button'>Lire plus </button>";
 }
 
 
