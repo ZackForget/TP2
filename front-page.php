@@ -12,10 +12,8 @@
  * @package Underscores
  */
 
-get_header();
+//get_header();
 ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
 
 		<?php
 
@@ -75,5 +73,5 @@ $args2 = array(
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+//get_sidebar();
+//get_footer();

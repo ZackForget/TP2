@@ -21,9 +21,17 @@
 }
 
 
-.main{
-    background-color: black;
+
+
+
+#nouvelleFlex{
+     display: flex;
+     height: 250px;
+     justify-content: start;
+     flex-direction: row;
+     margin-bottom: 25px;
 }
+
 
 p{
     max-width: 75%;
@@ -31,7 +39,6 @@ p{
     letter-spacing: 3px;
     word-spacing: 6px;
 }
-
 
 #grilleAteliers{
     display: grid;
@@ -41,9 +48,7 @@ p{
 
 #grilleAteliers div{
     border: solid 1px black;
-
 }
-
 
 
 @import 'sass/style.scss';
